@@ -7,7 +7,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 require('es6-promise').polyfill();
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/js/main.js',
 
   output: {
     path: __dirname,
@@ -15,9 +15,7 @@ module.exports = {
   },
 
   plugins: [
-    // Specify the resulting CSS filename
     new ExtractTextPlugin('css/app.css'),
-
   ],
 
   module: {
@@ -39,15 +37,20 @@ module.exports = {
             'sass-loader'
           ]
         })
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader'
+          ]
+        })
       }
     ]
   },
 
   stats: {
-    // Colored output
     colors: true
-  },
-
-  // Create Sourcemaps for the bundle
-  devtool: 'source-map'
+  }
 };

@@ -1,0 +1,71 @@
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (min-width: $size-small) { @content; }
+  }
+
+  @else if $media == medium {
+    @media only screen and (min-width: $size-medium) { @content; }
+  }
+
+  @else if $media == large {
+    @media only screen and (min-width: $size-large) { @content; }
+  }
+
+  @else if $media == xlarge {
+    @media only screen and (min-width: $size-xlarge) { @content; }
+  }
+
+  @else if $media == xxlarge {
+    @media only screen and (min-width: $size-max) { @content; }
+  }
+}
+
+@mixin keyframes( $animationName ) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin header-font-size($font-family, $size-normal, $size-small, $size-medium, $size-large, $size-xlarge) {
+  font-family:  $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  margin-top: 0;
+  margin-bottom: $grid/2;
+  font-size: $size-normal;
+  @include respond-to(medium) { font-size: $size-medium; margin-bottom: $grid; line-height: 1; }
+  @include respond-to(large)  { font-size: $size-large; }
+  @include respond-to(xlarge)  { font-size: $size-xlarge; }
+}
+
+h1 {
+  @include header-font-size($font-family-header, 1.4em,1.5em,2.1em,2.6em,3em);
+}
+
+h2 {
+  @include header-font-size($font-family-basic, 1em,1em,1.25em,1.25em,1.25em);
+  line-height: 1.1;
+  font-weight: 500;
+  @include respond-to(medium) { line-height: 1.2; }
+}
+
+h3 {
+  @include header-font-size($font-family-basic, 1em,1em,1em,1em,1em);
+  line-height: 1.1;
+  margin-bottom: 0 !important;
+  @include respond-to(medium) { line-height: 1.2; }
+}
+
+h4 {
+  @include header-font-size($font-family-header, 1em,1em,1em,1em,1em);
+}
