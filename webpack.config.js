@@ -50,6 +50,10 @@ module.exports = {
     ]
   },
 
+  devServer: {
+    historyApiFallback: true
+  },
+
   stats: {
     colors: true
   }

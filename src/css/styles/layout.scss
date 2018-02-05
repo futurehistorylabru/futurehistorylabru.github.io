@@ -1,3 +1,12 @@
 body {
-  background: black;
+  padding: 0;
+  color: #111;
+  font-size: 18px;
+  line-height: 1.35;
+  background: $color-blue;
+  color: $color-white;
+  font-family: $font-family-basic;
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
 }
