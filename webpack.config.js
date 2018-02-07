@@ -49,8 +49,16 @@ module.exports = {
           ]
         })
       },{
-        test: /\.(woff|woff2)$/,
-        loader: 'file?name=src/fonts/[name].[ext]'
+        test: /\.(woff|woff2|ttf|eot)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              mimetype: 'application/octet-stream'
+            }
+          }
+        ]
       }
     ]
   },
