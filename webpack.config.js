@@ -50,7 +50,7 @@ module.exports = {
         })
       },{
         test: /\.(woff|woff2)$/,
-        loader: 'file?name=public/fonts/[name].[ext]'
+        loader: 'file?name=src/fonts/[name].[ext]'
       }
     ]
   },
