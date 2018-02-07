@@ -48,6 +48,9 @@ module.exports = {
             'css-loader'
           ]
         })
+      },{
+        test: /\.(woff|woff2)$/,
+        loader: 'file?name=public/fonts/[name].[ext]'
       }
     ]
   },
