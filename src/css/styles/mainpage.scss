@@ -1,0 +1,24 @@
+.video-intro {
+  padding-top: 22px;
+  margin-bottom: $grid*2 - 4px;
+
+  img {
+    border: 1px solid $color-white;
+  }
+}
+
+.agency-services {
+  ul {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+    padding: 0 1px;
+  }
+  li {
+    border: 1px solid $color-white;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    white-space: nowrap;
+    padding: 24px 12px 23px;
+  }
+}

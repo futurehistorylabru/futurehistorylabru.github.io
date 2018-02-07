@@ -4,8 +4,6 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-require('es6-promise').polyfill();
-
 module.exports = {
   entry: './src/js/main.js',
 
@@ -16,6 +14,10 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('css/app.css'),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
   ],
 
   module: {
