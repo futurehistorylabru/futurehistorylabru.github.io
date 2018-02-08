@@ -38,7 +38,8 @@ module.exports = {
             'postcss-loader',
             'sass-loader'
           ]
-        })
+        }),
+        include: __dirname
       },
       {
         test: /\.css$/,
