@@ -50,15 +50,8 @@ module.exports = {
         })
       },
       {
-        // Match woff2 and patterns like .woff?v=1.1.1.
-        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader",
-        options: {
-          limit: 50000,
-          mimetype: "application/font-woff",
-          name: "./public/fonts/[name].[ext]", // Output below ./fonts
-          publicPath: "../", // Take the directory into account
-        },
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=src/fonts/[name].[ext]'
       },
     ]
   },
