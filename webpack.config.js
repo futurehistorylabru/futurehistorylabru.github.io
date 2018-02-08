@@ -51,9 +51,10 @@ module.exports = {
         })
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file?name=src/fonts/[name].[ext]'
-      },
+        test: /\.(woff|woff2)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=1024&name=public/fonts/[name].[ext]'
+      }
     ]
   },
 
