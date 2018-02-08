@@ -9,8 +9,7 @@ module.exports = {
 
   output: {
     path: __dirname,
-    filename: 'js/app.js',
-    publicPath: 'public/'
+    filename: 'js/app.js'
   },
 
   plugins: [
@@ -51,9 +50,16 @@ module.exports = {
         })
       },
       {
-        test : /\.(eot|otf|woff|woff2|ttf|svg)(\?\S*)?$/,
-        loader: 'file?name=[name].[ext]'
-      }
+        // Match woff2 and patterns like .woff?v=1.1.1.
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader",
+        options: {
+          limit: 50000,
+          mimetype: "application/font-woff",
+          name: "./public/fonts/[name].[ext]", // Output below ./fonts
+          publicPath: "../", // Take the directory into account
+        },
+      },
     ]
   },
 
