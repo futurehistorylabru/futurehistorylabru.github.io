@@ -1,3 +1,75 @@
 body {
-  background: black;
+  padding: 0;
+  color: #111;
+  font-size: 18px;
+  line-height: 24px;
+  background: $color-blue;
+  color: $color-white;
+  font-family: $font-family-eng;
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-white;
+  background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+  background-position: 0 1.04em;
+  background-repeat: repeat-x;
+  background-size: 8px 2px;
+}
+
+p {
+  margin-top: 0;
+}
+
+#projects {
+  background: $color-blue;
+}
+
+#contacts {
+  background: $color-pink;
+}
+
+#team {
+  background: $color-orange;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  // transition: opacity $base-transition-style .3s;
+  padding-top: $header-mobile-offset;
+}
+
+.padded {
+  padding-left: $grid/3;
+  padding-right: $grid/3;
+}
+
+.hidden {
+  display: none;
+}
+
+.section {
+  padding-top: 55px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
 }

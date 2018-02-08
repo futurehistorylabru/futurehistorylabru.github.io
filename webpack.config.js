@@ -4,8 +4,6 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-require('es6-promise').polyfill();
-
 module.exports = {
   entry: './src/js/main.js',
 
@@ -15,7 +13,11 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('css/app.css'),
+    new ExtractTextPlugin('css/app.css', { allChunks: true }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
   ],
 
   module: {
@@ -36,7 +38,8 @@ module.exports = {
             'postcss-loader',
             'sass-loader'
           ]
-        })
+        }),
+        include: __dirname
       },
       {
         test: /\.css$/,
@@ -46,8 +49,16 @@ module.exports = {
             'css-loader'
           ]
         })
-      }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'file?name=src/fonts/[name].[ext]'
+      },
     ]
+  },
+
+  devServer: {
+    historyApiFallback: true
   },
 
   stats: {

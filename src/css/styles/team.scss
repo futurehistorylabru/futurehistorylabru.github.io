@@ -1,0 +1,31 @@
+.team-item {
+  background: $color-white;
+  color: $color-black;
+  margin-bottom: $grid*2;
+}
+
+.team-info-wrapper {
+  padding-top: $grid;
+  padding-bottom: $grid;
+}
+
+.team-img {
+  padding-bottom: 82.2%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-show-more {
+  background: $color-black;
+  padding-top: $grid;
+  padding-bottom: $grid;
+  display: block;
+
+  span {
+    background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+    background-position: 0 1.04em;
+    background-repeat: repeat-x;
+    background-size: 8px 2px;
+  }
+}

@@ -1,26 +1,19 @@
-$grid: 30px;
 $base-transition-style: cubic-bezier(0.660, 0.000, 0.070, 1.000);
 $transition-time: 300ms;
-$font-family-basic: "Avenir Next Cyr", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-eng: 'nimbus_sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-family-header: "Hoefler Text Black";
 
-$size-xlarge:         1200px;
-$size-large:         1024px;
-$size-medium:         768px;
-$size-xsmall:         520px;
-$size-small:         375px;
+// $size-large:         1024px;
+$size-normal:         1024px;
 
-$color-grey: #757575;
-$color-light-grey: #F5F7F7;
-$color-red: #DC0000;
-$color-blue: #6BC3E5;
-$color-light-blue: #E1EBEE;
-$color-line-blue: #636C75;
-$color-dark-blue: #353B42;
-$color-lighter-blue: #1A5D78;
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #FF7700;
+$color-pink: #FFB7FD;
+$color-blue: #0019AA;
 
-$background-blue: #D9F1FA;
-$background-pink: #F7E6E1;
+$grid: 24px;
 
-$padding-small: 20px;
-$grid: 30px;
+// header
+$logo-mobile-width: 57px;
+$header-mobile-offset: 48px;
