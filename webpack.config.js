@@ -49,11 +49,7 @@ module.exports = {
             'css-loader'
           ]
         })
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        loader: 'file?name=src/fonts/[name].[ext]'
-      },
+      }
     ]
   },
 

@@ -22,9 +22,8 @@
   "dependencies": {
     "extract-text-webpack-plugin": "^3.0.1",
     "jquery": "^2.1.4",
-    "normalize.css": "^7.0.0"
-  },
-  "devDependencies": {
+    "normalize.css": "^7.0.0",
+    "slick-carousel": "^1.8.1",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

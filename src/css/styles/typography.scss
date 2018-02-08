@@ -1,13 +1,19 @@
 @font-face {
     font-family: 'nimbus_sans';
-    src: url(/public/fonts/urw-nimbussanext-bol-webfont.woff2) format('woff2'),
-         url(/public/fonts/urw-nimbussanext-bol-webfont.woff) format('woff');
+    src: url('/public/fonts/urw-nimbussanext-bol-webfont.woff2') format('woff2'),
+         url('/public/fonts/urw-nimbussanext-bol-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 .font-size-h1 {
   @include font-size-h1(85px);
+  a {
+    background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+    background-position: 0 1.04em;
+    background-repeat: repeat-x;
+    background-size: 8px 2px;
+  }
 }
 
 .font-size-descr {
