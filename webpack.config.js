@@ -9,7 +9,8 @@ module.exports = {
 
   output: {
     path: __dirname,
-    filename: 'js/app.js'
+    filename: 'js/app.js',
+    publicPath: 'public/'
   },
 
   plugins: [
@@ -51,7 +52,7 @@ module.exports = {
       },
       {
         test : /\.(eot|otf|woff|woff2|ttf|svg)(\?\S*)?$/,
-        loader: 'file?publicPath=../&name=./public/fonts/[hash].[ext]'
+        loader: 'file?name=[name].[ext]'
       }
     ]
   },
