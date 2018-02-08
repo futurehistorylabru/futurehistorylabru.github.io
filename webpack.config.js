@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         test : /\.(eot|otf|woff|woff2|ttf|svg)(\?\S*)?$/,
-        loader: "file?name=./public/fonts/[hash].[ext]"
+        loader: 'url-loader?limit=100000&name=./public/fonts/[hash].[ext]'
       }
     ]
   },
