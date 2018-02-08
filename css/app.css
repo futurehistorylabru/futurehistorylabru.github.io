@@ -447,7 +447,7 @@ template {
 }
 @font-face {
   font-family: 'nimbus_sans';
-  src: url(/public/fonts/urw-nimbussanext-bol-webfont.woff2) format("woff2"), url(/public/fonts/urw-nimbussanext-bol-webfont.woff) format("woff");
+  src: url("/public/fonts/urw-nimbussanext-bol-webfont.woff2") format("woff2"), url("/public/fonts/urw-nimbussanext-bol-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -463,6 +463,13 @@ template {
       font-size: 85px;
       margin-bottom: 48px;
       line-height: 96px; } }
+  .font-size-h1 a {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(100%, #fff), to(transparent));
+    background-image: -o-linear-gradient(left, #fff 100%, transparent 100%);
+    background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+    background-position: 0 1.04em;
+    background-repeat: repeat-x;
+    background-size: 8px 2px; }
 
 .font-size-descr {
   margin-top: 0;
@@ -490,7 +497,14 @@ ul {
   margin: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(100%, #fff), to(transparent));
+  background-image: -o-linear-gradient(left, #fff 100%, transparent 100%);
+  background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+  background-position: 0 1.04em;
+  background-repeat: repeat-x;
+  background-size: 8px 2px; }
 
 #projects {
   background: #0019AA; }
@@ -646,3 +660,9 @@ a {
   margin-left: -1px;
   white-space: nowrap;
   padding: 24px 12px 23px; }
+
+.agency-services {
+  margin-bottom: 48px; }
+
+.anchors {
+  margin-bottom: 29px; }
