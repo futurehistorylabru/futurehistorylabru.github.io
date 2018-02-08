@@ -13,7 +13,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('css/app.css'),
+    new ExtractTextPlugin('css/app.css', { allChunks: true }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         test : /\.(eot|otf|woff|woff2|ttf|svg)(\?\S*)?$/,
-        loader: 'url-loader?limit=100000&name=./public/fonts/[hash].[ext]'
+        loader: 'file?publicPath=../&name=./public/fonts/[hash].[ext]'
       }
     ]
   },
