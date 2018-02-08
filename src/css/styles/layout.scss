@@ -30,6 +30,10 @@ a {
   background-size: 8px 2px;
 }
 
+p {
+  margin-top: 0;
+}
+
 #projects {
   background: $color-blue;
 }
@@ -55,6 +59,10 @@ a {
 .padded {
   padding-left: $grid/3;
   padding-right: $grid/3;
+}
+
+.hidden {
+  display: none;
 }
 
 // // remove

@@ -1,9 +1,51 @@
 'use strict';
 
-// import '/node_modules/jquery/dist/jquery.js';
 require('jquery');
+require('slick-carousel/slick/slick');
 import 'normalize.css';
+import 'slick-carousel/slick/slick.css';
 import '../css/main.scss';
+
+$(document).ready(function(){
+  var $root = $('html, body');
+  $('a.anchor-link[href*="#"]').click(function() {
+    var target = $(this.hash);
+    if (target.length == 0){ return true; }
+    $root.animate({scrollTop: target.offset().top - 16 }, 400);
+    return false;
+  });
+
+  $('.project-slider-mobile').slick();
+
+  $('.events-slider').slick();
+
+  showProjectAbout();
+});
+
+function showProjectAbout() {
+  var aboutProjectLink = $('.project-about-link');
+  var closeProjectLink = $('.project-about-close-link');
+
+  aboutProjectLink.click(function(event) {
+    var el = $(this);
+    var container = el.closest('.project-item');
+    var about = container.find('.project-about');
+    about.removeClass('hidden');
+    container.css('margin-bottom', 0);
+    container.nextAll().addClass('hidden');
+    event.preventDefault();
+  });
+
+  closeProjectLink.click(function(event) {
+    var el = $(this);
+    var container = el.closest('.project-item');
+    var about = container.find('.project-about');
+    about.addClass('hidden');
+    container.css('margin-bottom', '');
+    container.nextAll().removeClass('hidden');
+    event.preventDefault();
+  });
+}
 
 // document.addEventListener("DOMContentLoaded", function() {
 //   var url = window.location.pathname.replace(/^\/+/g, ''),

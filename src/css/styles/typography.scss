@@ -10,13 +10,17 @@
   @include font-size-h1(85px);
   a {
     background-image: linear-gradient(to right, #fff 100%, transparent 100%);
-    background-position: 0 1.04em;
+    background-position: 0 1.047em;
     background-repeat: repeat-x;
-    background-size: 8px 2px;
+    background-size: 8px 3px;
   }
 }
 
 .font-size-descr {
   margin-top: 0;
   margin-bottom: $grid;
+}
+
+.font-size-p {
+  font-family: 'Roboto', sans-serif;
 }
