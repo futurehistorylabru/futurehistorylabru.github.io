@@ -49,8 +49,11 @@ module.exports = {
           ]
         })
       },{
-        test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file?name=public/fonts/[name].[ext]'
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: "file-loader",
+        options: {
+          name: "public/fonts/[name].[ext]",
+        },
       }
     ]
   },
