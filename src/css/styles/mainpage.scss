@@ -171,20 +171,24 @@
     }
 
     .slick-track{
-        display: flex;
+      display: flex;
 
-        .slick-slide{
-            display: flex;
-            height: auto;
-            align-items: center; //optional
-            justify-content: center; //optional
+      .slick-slide{
+        display: flex;
+        height: auto;
+        justify-content: center; //optional
+
+        div {
+          height: 100%;
         }
+      }
     }
   }
 
   .events-slider-content {
     padding: $grid;
     border: 1px solid $color-white;
+    height: 100%;
   }
 
   .events-slider-item {
@@ -198,5 +202,10 @@
     background-repeat: no-repeat;
     margin-top: -$grid*2;
     margin-bottom: 14px;
+    height: auto !important;
+  }
+
+  .events-slider-descr {
+    height: auto !important;
   }
 }
