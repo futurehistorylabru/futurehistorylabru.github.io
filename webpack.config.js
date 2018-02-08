@@ -48,12 +48,10 @@ module.exports = {
             'css-loader'
           ]
         })
-      },{
-        test: /\.(ttf|eot|woff|woff2)$/,
-        loader: "file-loader",
-        options: {
-          name: "public/fonts/[name].[ext]",
-        },
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'file?name=src/fonts/[name].[ext]'
       }
     ]
   },
