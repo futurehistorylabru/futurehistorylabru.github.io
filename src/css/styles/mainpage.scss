@@ -151,6 +151,7 @@
 
 .events {
   margin-bottom: $grid*2;
+  overflow: hidden;
 
   .font-size-h1 {
     margin-bottom: $grid*2;
@@ -200,12 +201,28 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: -$grid*2;
+    margin-top: -$grid*2 - 1px;
     margin-bottom: 14px;
     height: auto !important;
   }
 
   .events-slider-descr {
     height: auto !important;
+  }
+
+  .events-fb-link {
+    margin-top: $grid/2;
+    display: inline-block;
+  }
+}
+
+.footer {
+  font-size: 14px;
+  line-height: 24px;
+  padding-bottom: $grid*1.5;
+
+  a {
+    background-image: none;
+    text-decoration: underline;
   }
 }

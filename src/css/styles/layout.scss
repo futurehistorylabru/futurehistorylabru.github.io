@@ -52,8 +52,8 @@ p {
 }
 
 .container {
-  transition: opacity $base-transition-style .3s;
-  // padding-top: $header-mobile-offset;
+  // transition: opacity $base-transition-style .3s;
+  padding-top: $header-mobile-offset;
 }
 
 .padded {
@@ -65,23 +65,11 @@ p {
   display: none;
 }
 
-// // remove
-// .container {
-//   display: flex;
-// }
-// .section {
-//   max-width: 320px;
-// }
-// // remove
-
 .section {
   padding-top: 55px;
+  display: none;
 
   &.active {
     display: block;
-  }
-
-  .trigger {
-    display: none;
   }
 }

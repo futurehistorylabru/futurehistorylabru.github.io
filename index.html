@@ -16,12 +16,13 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
+  <div id="top"></div>
   <div id="main" class="main">
 
-   <!--  <div class="header-mobile">
+    <div class="header-mobile">
       <div class="header-mobile-content">
-        <a class="trigger header-mobile-link" href="#" data-tab="intro">
-          <img src="src/img/logo-mobile.png">
+        <a class="trigger header-mobile-link" href="#startpage" data-tab="intro">
+          <img src="public/img/logo-mobile.png">
         </a>
         <div id="menu-trigger" class="menu-trigger">
           <span></span>
@@ -42,11 +43,11 @@
         <a class="trigger trigger-contacts" href="#contacts" data-tab="contacts"><span>Contacts</span></a>
         <a class="trigger trigger-team" href="#team" data-tab="team"><span>Team</span></a>
       </nav>
-    </div> -->
+    </div>
 
     <div id="container" class="container">
 
-      <div id="main" class="section">
+      <div id="startpage" class="section active">
 
         <!-- main-info -->
         <div class="main-info">
@@ -78,7 +79,7 @@
           </div>
         </div>
 
-        <div class="content">
+        <div id="projects" class="content">
           <div class="padded anchors">
             Pick the project or just scroll: <a class="anchor-link" href="#1917">Project 1917</a>, <a class="anchor-link" href="#history-map">The Russian History Map</a>, <a class="anchor-link" href="#democracy-birth">The Troubled Birth of Russian Democracy: A Virtual Museum</a>, <a class="anchor-link" href="#1968">1968. DIGITAL</a>, <a class="anchor-link" href="#historical-series">Historical Animated Series</a>, <a class="anchor-link" href="#events">Offline Events</a>.
           </div>
@@ -294,7 +295,7 @@
                   <div class="events-slider-descr">
                     Project 1917 launch at the Tretyakov gallery featuring an original theatre performance dedicated to the year 1917
                   </div>
-                  <!-- <a class="project-about-close-link" href="#">Go to facebook</a> -->
+                  <!-- <a class="events-fb-link" target="_blank" href="#">Go to facebook</a> -->
                 </div>
               </div>
 
@@ -304,7 +305,7 @@
                   <div class="events-slider-descr">
                     Discussion “The forgotten First Republic” at the Metropol hotel in Moscow, hosted by Project 1917 and moderated by Mikhail Zygar
                   </div>
-                  <!-- <a class="project-about-close-link" href="#">Go to facebook</a> -->
+                  <!-- <a class="events-fb-link" target="_blank" href="#">Go to facebook</a> -->
                 </div>
               </div>
 
@@ -314,7 +315,37 @@
                   <div class="events-slider-descr">
                     Exhibition “Someone 1917” in Tretyakov gallery
                   </div>
-                  <!-- <a class="project-about-close-link" href="#">Go to facebook</a> -->
+                  <a class="events-fb-link" target="_blank" href="https://www.tretyakovgallery.ru/exhibitions/nekto-1917/">Learn more</a>
+                </div>
+              </div>
+
+              <div class="events-slider-item">
+                <div class="events-slider-content">
+                  <div class="events-slider-img" style="background-image: url('public/img/events/jewish-museum/main.jpg');"></div>
+                  <div class="events-slider-descr">
+                    Partnership with the Jewish Museum and Tolerance Center at their exhibition “Freedom for All? The History of One People in the Years of Revolution”
+                  </div>
+                  <a class="events-fb-link" target="_blank" href="https://www.jewish-museum.ru/exhibitions/kazhdomu-po-svobode-istoriya-odnogo-naroda-v-gody-revolyutsii/">Learn more</a>
+                </div>
+              </div>
+
+              <div class="events-slider-item">
+                <div class="events-slider-content">
+                  <div class="events-slider-img" style="background-image: url('public/img/events/public-talks/main.jpg');"></div>
+                  <div class="events-slider-descr">
+                    Public talks at the Moscow State University of International Relations, Skolkovo Moscow School of Management, Columbia University, Massachusetts Institute of Technology, Stanford University, Cambridge University
+                  </div>
+                  <a class="events-fb-link" target="_blank" href="https://www.msses.ru/about/news/3636/">Learn more</a>
+                </div>
+              </div>
+
+              <div class="events-slider-item">
+                <div class="events-slider-content">
+                  <div class="events-slider-img" style="background-image: url('public/img/events/zygar-empire/main.jpg');"></div>
+                  <div class="events-slider-descr">
+                    Mikhail Zygar’s “Empire must die” book event at the residence of the Australian ambassador in Moscow.
+                  </div>
+                  <a class="events-fb-link" target="_blank" href="https://www.facebook.com/pg/kartaistorii/photos/?tab=album&album_id=1547775892010221">Go to facebook</a>
                 </div>
               </div>
 
@@ -322,16 +353,110 @@
           </div>
 
         </div>
+
+        <div class="footer padded font-size-p">
+          <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
+          <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
+          <div class="footer-item back"><a href="#top">Back to top</a></div>
+        </div>
+
       </div>
 
-      <div id="contacts" class="section" style="display: none;">
-        <div><a class="trigger" href="#contacts" data-tab="contacts">Contacts</a></div>
-        <div class="content">If you have an awesome joint project in mind, reach out directly to Mikhail or Karen. If you found a mistake, report it to our editors. If you want to become our partner and friend, Vera will make things happen. <div style="height: 700px;"></div></div>
+      <div id="contacts" class="section">
+        <div class="content">
+          <div class="font-size-descr contacts-lead padded">
+            If you have an awesome joint project in mind, reach out directly to <a href="mailto:mikhail@futurehistory.com">Mikhail</a> or <a href="mailto:karen@futurehistory.com">Karen</a>. If you found a mistake, report it to our <a href="mailto:editors@futurehistory.com">editors</a>. If you want to become our partner and friend, <a href="mailto:marketing@futurehistory.com">Vera</a> will make things happen.
+          </div>
+          <div class="font-size-h1 padded">
+            Follow us on our social network channels
+          </div>
+          <div class="font-size-h1 padded">
+            <a href="#" target="_blank">Facebook</a><br>
+            <a href="#" target="_blank">Instagram</a><br>
+            <a href="#" target="_blank">Vkontakte</a>
+          </div>
+          <div class="partners">
+            <div class="font-size-h1 padded">
+              Partners:
+            </div>
+            <p class="padded font-size-p">
+              Yandex Publishing, Sberbank, The Zimin Foundation, VKontakte, Marina Tsvetaeva House Museum, The Tretyakov Gallery, The State Archive of Russian Federation, The Russian State Archive of Literature and Arts, Gogol Center, Multimedia Art Museum, Moscow, Kommersant, State Historical Museum, Kuckovo Pole Publishing House, DLA Piper, Authenticlub, The Esenin Museum of Moscow, Zakharov Publishing House, Russian State Library, Film archive net-film
+            </p>
+          </div>
+          <div class="footer padded font-size-p">
+            <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
+            <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
+            <div class="footer-item back"><a href="#top">Back to top</a></div>
+          </div>
+        </div>
       </div>
 
-      <div id="team" class="section" style="display: none;">
-        <div><a class="trigger" href="#team" data-tab="team">Team</a></div>
-        <div class="content"><h1 style="margin-top: 0;">Here is our team that is telling the stories.</h1><div style="height: 700px;"></div></div>
+      <div id="team" class="section">
+        <div class="content">
+          <div class="font-size-h1 padded">We believe history matters.</div>
+
+          <div class="team-item">
+            <div class="team-img" style="background-image: url('public/img/team/zygar.jpg');"></div>
+            <div class="team-info-wrapper padded">
+              <div class="team-info">
+                Mikhail Zygar<br>
+                Founder & Editor-in-Chief<br>
+                Journalist and writer
+              </div>
+            </div>
+            <a href=# class="team-show-more padded">
+              <span>More</span>
+            </a>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img" style="background-image: url('public/img/team/karen.jpg');"></div>
+            <div class="team-info-wrapper padded">
+              <div class="team-info">
+                Karen Shainian<br>
+                Founder & CEO<br>
+                Journalist and media manager
+              </div>
+            </div>
+            <a href=# class="team-show-more padded">
+              <span>More</span>
+            </a>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img" style="background-image: url('public/img/team/zygar.jpg');"></div>
+            <div class="team-info-wrapper padded">
+              <div class="team-info">
+                Mikhail Zygar<br>
+                Founder & Editor-in-Chief<br>
+                Journalist and writer
+              </div>
+            </div>
+            <a href=# class="team-show-more padded">
+              <span>More</span>
+            </a>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img" style="background-image: url('public/img/team/karen.jpg');"></div>
+            <div class="team-info-wrapper padded">
+              <div class="team-info">
+                Karen Shainian<br>
+                Founder & CEO<br>
+                Journalist and media manager
+              </div>
+            </div>
+            <a href=# class="team-show-more padded">
+              <span>More</span>
+            </a>
+          </div>
+
+        </div>
+        <div class="footer padded font-size-p">
+          <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
+          <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
+          <div class="footer-item back"><a href="#top">Back to top</a></div>
+        </div>
       </div>
     </div>
 
