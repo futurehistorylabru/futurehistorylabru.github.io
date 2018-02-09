@@ -170,20 +170,6 @@
     .slick-list {
       overflow: visible;
     }
-
-    .slick-track{
-      display: flex;
-
-      .slick-slide{
-        display: flex;
-        height: auto;
-        justify-content: center; //optional
-
-        div {
-          height: 100%;
-        }
-      }
-    }
   }
 
   .events-slider-content {
@@ -203,11 +189,6 @@
     background-repeat: no-repeat;
     margin-top: -$grid*2 - 1px;
     margin-bottom: 14px;
-    height: auto !important;
-  }
-
-  .events-slider-descr {
-    height: auto !important;
   }
 
   .events-fb-link {

@@ -29,3 +29,99 @@
     background-size: 8px 2px;
   }
 }
+
+.team-about {
+  background: $color-white;
+  color: $color-black;
+  position: relative;
+  z-index: 2;
+}
+
+.team-about-close {
+  width: $grid*2;
+  height: $grid*2;
+  position: absolute;
+  right: $grid/3;
+  top: -60px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.team-about-header {
+  border-top: 1px solid $color-black;
+  border-bottom: 1px solid $color-black;
+  padding-top: $grid;
+  padding-bottom: $grid;
+}
+
+.team-about-book {
+  margin-top: $grid;
+  margin-bottom: $grid;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.team-about-text {
+  padding-top: $grid;
+  p {
+    margin-bottom: $grid;
+
+    &.blue {
+      color: $color-blue;
+    }
+
+    &.separated {
+      border-top: 1px solid $color-blue;
+      padding-top: $grid;
+    }
+  }
+
+  a {
+    color: $color-black;
+    background-color: none;
+  }
+}
+
+.team-about-stats {
+  margin-bottom: $grid;
+}
+
+.team-buy-book {
+  background: $color-white;
+  padding-top: $grid;
+  padding-bottom: $grid;
+  border-top: 1px solid $color-black;
+  border-bottom: 1px solid $color-black;
+  display: block;
+  color: $color-black;
+
+  span {
+    background-image: linear-gradient(to right, $color-black 100%, transparent 100%);
+    background-position: 0 1.04em;
+    background-repeat: repeat-x;
+    background-size: 8px 2px;
+  }
+}
+
+.team-about-footer {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid $color-black;
+  margin-top: -1px;
+
+  a {
+    width: 100%;
+    color: $color-black;
+    background-color: none;
+    padding-top: $grid;
+    padding-bottom: $grid;
+    text-align: left;
+  }
+}
