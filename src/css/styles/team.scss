@@ -2,11 +2,90 @@
   background: $color-white;
   color: $color-black;
   margin-bottom: $grid*2;
+  @include respond-to(normal) {
+    background: transparent;
+    color: $color-white;
+    position: relative;
+    margin-bottom: 168px;
+    max-width: 700px;
+    padding-left: 20px;
+
+    &.team-item-featured {
+      position: relative;
+      margin-bottom: 0;
+      max-width: 100%;
+      padding-left: 0;
+
+      .team-imgwrapper {
+        width: 48%;
+        max-width: 100%;
+      }
+
+      .team-info-wrapper {
+        width: 60.6%;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.team-item-featured-flipped {
+      margin-top: -$grid*3;
+      margin-bottom: $grid*2;
+
+      .team-imgwrapper {
+        margin-left: auto;
+        margin-right: $grid*4;
+      }
+
+      .team-info-wrapper {
+        left: 0;
+        right: auto;
+        width: 310px;
+      }
+
+      .team-show-more {
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.team-heading {
+  @include respond-to(normal) {
+    margin-bottom: $grid;
+  }
 }
 
 .team-info-wrapper {
   padding-top: $grid;
   padding-bottom: $grid;
+  @include respond-to(normal) {
+    z-index: 5;
+    position: absolute;
+    width: 50%;
+    top: 132px;
+    right: -50px;
+  }
+}
+
+.team-imgwrapper {
+  @include respond-to(normal) {
+    max-width: 320px;
+    position: relative;
+    &.visible {
+      .team-img-2 {
+        transform: translate($grid*3,$grid*2.5);
+        z-index: 2;
+      }
+      .team-img-3 {
+        transform: translate($grid*6,$grid*5);
+        z-index: 3;
+      }
+    }
+  }
 }
 
 .team-img {
@@ -14,6 +93,45 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include respond-to(normal) {
+    padding-bottom: 130%;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.team-img-2, &.team-img-3 {
+    display: none;
+    @include respond-to(normal) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.team-item-right {
+  @include respond-to(normal) {
+    .team-imgwrapper {
+      margin-left: auto;
+      &.visible {
+        .team-img-2 {
+          transform: translate(-$grid*3, $grid*2.5);
+          z-index: 2;
+        }
+        .team-img-3 {
+          transform: translate(-$grid*6, $grid*5);
+          z-index: 3;
+        }
+      }
+    }
+    .team-info-wrapper {
+      left: 0;
+      right: auto;
+    }
+  }
 }
 
 .team-show-more {
@@ -21,6 +139,15 @@
   padding-top: $grid;
   padding-bottom: $grid;
   display: block;
+
+  @include respond-to(normal) {
+    position: absolute;
+    bottom: $grid;
+    left: $grid;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: none; 
+  }
 
   span {
     background-image: linear-gradient(to right, #fff 100%, transparent 100%);

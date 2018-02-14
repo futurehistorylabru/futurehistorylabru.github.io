@@ -17,7 +17,7 @@
 </head>
 <body>
   <div id="top"></div>
-  <div id="main" class="main">
+  <div id="main" class="main startpage-active">
 
     <div class="header-mobile">
       <div class="header-mobile-content">
@@ -47,17 +47,26 @@
 
     <div id="container" class="container">
 
-      <div id="startpage" class="section active">
-
+      <div id="startpage" class="section startpage">
+        <div class="wrapper">
+        <div class="section-header">
+          <a class="trigger section-header-logo" href="#startpage" data-tab="intro">
+            <img src="public/img/logo.gif">
+          </a>
+          <a href="#projects" class="section-header-name">
+            <img src="public/img/arrow-down.svg">
+            <span class="font-size-p">Projects</span>
+          </a>
+        </div>
         <!-- main-info -->
         <div class="main-info">
-          <h1 class="font-size-h1 padded">We believe history matters.</h1>
-          <p class="padded font-size-descr">History defines the way we&nbsp;live and think. Historical knowledge gives us&nbsp;the power to&nbsp;improve our world today. That’s&nbsp;why we’re&nbsp;bringing historical storytelling into the modern age through new narrative formats. We&nbsp;change the future by&nbsp;bringing the past closer to&nbsp;the present.</p>
+          <h1 class="startpage-title font-size-h1 padded">We believe history matters.</h1>
+          <p class="startpage-descr padded font-size-descr">History defines the way we&nbsp;live and think. Historical knowledge gives us&nbsp;the power to&nbsp;improve our world today. That’s&nbsp;why we’re&nbsp;bringing historical storytelling into the modern age through new narrative formats. We&nbsp;change the future by&nbsp;bringing the past closer to&nbsp;the present.</p>
           <!-- should be video -->
-          <div class="video-intro padded">
+          <div class="video-intro padded" style="max-width: 750px;">
             <img src="public/img/video.jpg" style="display: block; width: 100%;">
           </div>
-          <div class="padded font-size-descr">
+          <div class="padded font-size-descr multimedia-education">
             Multimedia education & entertainment content:
           </div>
           <h2 class="padded font-size-h1">
@@ -97,7 +106,12 @@
                 <div class="project-slider-img" style="background-image: url('public/img/1917/screen3.png');"></div>
               </div>
             </div>
-            <p class="padded font-size-descr">Project 1917 is a documentary produced in a new format: a social network for the most prominent people of Russia’s 1917 revolution.</p>
+            <div class="project-info">
+              <div class="project-img-wrapper">
+                <img src="public/img/test.png">
+              </div>
+              <p class="project-descr padded font-size-descr">Project 1917 is a documentary produced in a new format: a social network for the most prominent people of Russia’s 1917 revolution.</p>
+            </div>
             <div class="padded project-actions">
               <a href="#" class="project-about-link">About</a>
               <a href="https://project1917.com/" target="_blank">Website</a>
@@ -166,7 +180,12 @@
                 <div class="project-slider-img" style="background-image: url('public/img/history-map/screen3.png');"></div>
               </div>
             </div>
-            <p class="padded font-size-descr">An innovative, interactive game focusing on Russia’s eventual 20th century history from the foundation of the Soviet Union to its collapse.</p>
+            <div class="project-info">
+              <div class="project-img-wrapper">
+                <img src="public/img/test.png">
+              </div>
+              <p class="project-descr padded font-size-descr">An innovative, interactive game focusing on Russia’s eventual 20th century history from the foundation of the Soviet Union to its collapse.</p>
+            </div>
             <div class="padded project-actions">
               <a href="#" class="project-about-link">About</a>
               <a href="https://www.kartaistorii.ru/" target="_blank">Website</a>
@@ -200,7 +219,12 @@
                 <div class="project-slider-img" style="background-image: url('public/img/democracy-birth/screen3.png');"></div>
               </div>
             </div>
-            <p class="padded font-size-descr">This virtual museum presents a guided tour of the the Soviet Union’s turn towards democracy during 1989-1991 in multimedia format.</p>
+            <div class="project-info">
+              <div class="project-img-wrapper">
+                <img src="public/img/test.png">
+              </div>
+              <p class="project-descr padded font-size-descr">This virtual museum presents a guided tour of the the Soviet Union’s turn towards democracy during 1989-1991 in multimedia format.</p>
+            </div>
             <div class="padded project-actions">
               <a href="#" class="project-about-link">About</a>
             </div>
@@ -224,7 +248,12 @@
             <div class="project-mobile-video padded">
               <img src="public/img/video.jpg">
             </div>
-            <p class="padded font-size-descr">A unique series about an exceptional year</p>
+            <div class="project-info">
+              <div class="project-img-wrapper">
+                <img src="public/img/test.png">
+              </div>
+              <p class="project-descr padded font-size-descr">A unique series about an exceptional year</p>
+            </div>
             <div class="padded project-actions">
               <a href="#" class="project-about-link">About</a>
             </div>
@@ -263,7 +292,12 @@
             <div class="project-mobile-video padded">
               <img src="public/img/video.jpg">
             </div>
-            <p class="padded font-size-descr">In each episode, everyday stories of regular citizens emerge from the past.</p>
+            <div class="project-info">
+              <div class="project-img-wrapper">
+                <img src="public/img/test.png">
+              </div>
+              <p class="project-descr padded font-size-descr">In each episode, everyday stories of regular citizens emerge from the past.</p>
+            </div>
             <div class="padded project-actions">
               <a href="#" class="project-about-link">About</a>
             </div>
@@ -357,12 +391,23 @@
         <div class="footer padded font-size-p">
           <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
           <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
-          <div class="footer-item back"><a href="#top">Back to top</a></div>
+          <div class="footer-item back"><a class="anchor-link" href="#top">Back to top</a></div>
         </div>
 
       </div>
+      </div>
 
-      <div id="contacts" class="section">
+      <div id="contacts" class="section contacts">
+        <div class="section-header">
+          <div class="section-header-name section-header-name-flipped" style="top: 76px; left: -28px;">
+            <span class="font-size-p">Contacts</span>
+          </div>
+          <a href="#projects" class="section-header-name">
+            <img src="public/img/arrow-down.svg">
+            <span class="font-size-p">Partners</span>
+          </a>
+        </div>
+        <div class="wrapper">
         <div class="content">
           <div class="font-size-descr contacts-lead padded">
             If you have an awesome joint project in mind, reach out directly to <a href="mailto:mikhail@futurehistory.com">Mikhail</a> or <a href="mailto:karen@futurehistory.com">Karen</a>. If you found a mistake, report it to our <a href="mailto:editors@futurehistory.com">editors</a>. If you want to become our partner and friend, <a href="mailto:marketing@futurehistory.com">Vera</a> will make things happen.
@@ -386,17 +431,26 @@
           <div class="footer padded font-size-p">
             <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
             <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
-            <div class="footer-item back"><a href="#top">Back to top</a></div>
+            <div class="footer-item back"><a class="anchor-link" href="#top">Back to top</a></div>
           </div>
+        </div>
         </div>
       </div>
 
-      <div id="team" class="section">
+      <div id="team" class="section team">
+        <div class="section-header">
+          <div class="section-header-name section-header-name-flipped" style="top: 63px; left: -15px;">
+            <span class="font-size-p">Team</span>
+          </div>
+        </div>
+        <div class="wrapper">
         <div class="content">
-          <div class="font-size-h1 padded">We believe history matters.</div>
+          <div class="team-heading font-size-h1 padded">We believe history matters.</div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/zygar.jpg');"></div>
+          <div class="team-item team-item-featured">
+            <div class="team-imgwrapper">
+              <div class="team-img" style="background-image: url('public/img/team/zygar.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Mikhail Zygar<br>
@@ -464,8 +518,10 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/karen.jpg');"></div>
+          <div class="team-item team-item-featured team-item-featured-flipped">
+            <div class="team-imgwrapper">
+              <div class="team-img" style="background-image: url('public/img/team/karen.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Karen Shainian<br>
@@ -495,7 +551,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/avstreyh.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/avstreyh.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/avstreyh.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/avstreyh.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Olga Avstreyh<br>
@@ -504,8 +564,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/volkov.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/volkov.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/volkov.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/volkov.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Aleksey Volkov<br>
@@ -515,7 +579,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/terekhova.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/terekhova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/terekhova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/terekhova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Olga Terekhova<br>
@@ -524,8 +592,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/ivanova.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/ivanova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/ivanova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/ivanova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Darya Ivanova<br>
@@ -535,7 +607,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/borzenko.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/borzenko.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/borzenko.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/borzenko.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Andrey Borzenko<br>
@@ -544,8 +620,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/venyavkin.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/venyavkin.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/venyavkin.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/venyavkin.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Ilya Venyavkin<br>
@@ -555,7 +635,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/degtyarev.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/degtyarev.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/degtyarev.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/degtyarev.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Mikhail Degtyarev<br>
@@ -563,9 +647,13 @@
               </div>
             </div>
           </div>
-
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/zemlinskaya.jpg');"></div>
+  
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/zemlinskaya.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/zemlinskaya.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/zemlinskaya.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Rashel Zemlinskaya<br>
@@ -575,7 +663,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/vasilieva.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/vasilieva.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/vasilieva.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/vasilieva.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Nataly Vasilieva<br>
@@ -584,8 +676,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/saprykin.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/saprykin.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/saprykin.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/saprykin.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Yuriy Saprykin-junior<br>
@@ -595,7 +691,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/makarenko.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/makarenko.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/makarenko.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/makarenko.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Vera Makarenko<br>
@@ -604,8 +704,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/konstantinova.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/konstantinova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/konstantinova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/konstantinova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Alexandra Konstantinova<br>
@@ -615,7 +719,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/nasalskaya.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/nasalskaya.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/nasalskaya.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/nasalskaya.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Olga Nasalskaya<br>
@@ -624,8 +732,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/krasovitskiy.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/krasovitskiy.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/krasovitskiy.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/krasovitskiy.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Pavel Krasovitskiy<br>
@@ -635,7 +747,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/zhanaidarov.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/zhanaidarov.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/zhanaidarov.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/zhanaidarov.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Daulet Zhanaidarov<br>
@@ -644,8 +760,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/luganskaya.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/luganskaya.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/luganskaya.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/luganskaya.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Anna Luganskaya<br>
@@ -655,7 +775,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/irina-ivanova.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/irina-ivanova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/irina-ivanova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/irina-ivanova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Irina Ivanova<br>
@@ -664,8 +788,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/tokoreva.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/tokareva.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/tokareva.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/tokareva.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Alyona Tokoreva<br>
@@ -675,7 +803,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/ershova.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/ershova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/ershova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/ershova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Nadezhda Ershova<br>
@@ -684,8 +816,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/zudilkin.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/zudilkin.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/zudilkin.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/zudilkin.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Maxim Zudilkin<br>
@@ -695,7 +831,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/sergeev.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/sergeev.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/sergeev.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/sergeev.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Maxim Sergeev<br>
@@ -704,8 +844,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/belokon.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/belokon.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/belokon.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/belokon.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Vladimir Belokon<br>
@@ -715,7 +859,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/treptsov.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/treptsov.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/treptsov.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/treptsov.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Nikita Treptsov<br>
@@ -724,8 +872,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/bocharova.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/bocharova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/bocharova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/bocharova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Anna Bocharova<br>
@@ -735,7 +887,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/trusov.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/trusov.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/trusov.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/trusov.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Ilya Trusov<br>
@@ -744,8 +900,12 @@
             </div>
           </div>
 
-          <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/zakrevskaya.jpg');"></div>
+          <div class="team-item team-item-right">
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/zakrevskaya.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/zakrevskaya.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/zakrevskaya.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Julia Zakrevskaya<br>
@@ -755,7 +915,11 @@
           </div>
 
           <div class="team-item">
-            <div class="team-img" style="background-image: url('public/img/team/molchanova.jpg');"></div>
+            <div class="team-imgwrapper visible">
+              <div class="team-img" style="background-image: url('public/img/team/molchanova.jpg');"></div>
+              <div class="team-img team-img-2" style="background-image: url('public/img/team/molchanova.jpg');"></div>
+              <div class="team-img team-img-3" style="background-image: url('public/img/team/molchanova.jpg');"></div>
+            </div>
             <div class="team-info-wrapper padded">
               <div class="team-info">
                 Natalia Molchanova<br>
@@ -768,8 +932,9 @@
         <div class="footer padded font-size-p">
           <div class="footer-item copywrite">2015 - 2018 | Future History ®</div>
           <div class="footer-item social"><a href="#top">Facebook</a> | <a href="#top">Instagram</a> | <a href="#top">Vkontakte</a></div>
-          <div class="footer-item back"><a href="#top">Back to top</a></div>
+          <div class="footer-item back"><a class="anchor-link" href="#top">Back to top</a></div>
         </div>
+      </div>
       </div>
     </div>
 

@@ -9,6 +9,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
+
+  @include respond-to(normal) {
+    overflow: hidden;
+    font-size: 34px;
+    line-height: 48px;
+  }
 }
 
 * {
@@ -27,7 +33,7 @@ a {
   background-image: linear-gradient(to right, #fff 100%, transparent 100%);
   background-position: 0 1.04em;
   background-repeat: repeat-x;
-  background-size: 8px 2px;
+  background-size: 8px 3px;
 }
 
 p {
@@ -49,16 +55,35 @@ p {
 .main {
   position: relative;
   min-height: 100vh;
+  @include respond-to(normal) {
+    // max-width: $container-size;
+    // margin: 0 auto;
+    // padding: 0 $trigger-size*2 0 $grid;
+
+    &.animated {
+      .section {
+        transition: transform $base-transition-style .3s;
+      }
+    }
+  }
 }
 
 .container {
-  // transition: opacity $base-transition-style .3s;
   padding-top: $header-mobile-offset;
+  @include respond-to(normal) {
+    width: 100%;
+    position: relative;
+    padding-top: 0;
+  }
 }
 
 .padded {
   padding-left: $grid/3;
   padding-right: $grid/3;
+  @include respond-to(normal) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .hidden {
@@ -68,8 +93,97 @@ p {
 .section {
   padding-top: 55px;
   display: none;
-
-  &.active {
+  @include respond-to(normal) {
     display: block;
+    width: 100%;
+    padding: 0 $grid;
+    // transition: transform $base-transition-style .3s;
+    height: 100vh;
+    overflow: scroll;
+    cursor: pointer;
+
+    .wrapper {
+      transition: opacity ease-in-out .3s;
+      pointer-events: none;
+    }
+  }
+}
+
+.section.startpage {
+  @include respond-to(normal) {
+    padding: 0;
+    .wrapper {
+      padding: 0 $trigger-size*2+24px 0 $grid;
+      max-width: $container-size;
+      margin: 0 auto;
+    }
+
+    .startpage-title, .startpage-descr {
+      display: inline;
+      font-size: 34px;
+      line-height: 48px;
+    }
+  }
+}
+
+.startpage-active {
+  .section.startpage {
+    display: block;
+
+    @include respond-to(normal) {
+      cursor: auto;
+      .wrapper {
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+.section.contacts, .section.team {
+  @include respond-to(normal) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: translateX(100%);
+    .wrapper {
+      opacity: 0;
+    }
+  }
+}
+
+.contacts-active {
+  .section.contacts {
+    display: block;
+    @include respond-to(normal) {
+      transform: translateX($trigger-size);
+      cursor: auto;
+      .wrapper {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+.team-active {
+  .section.team {
+    display: block;
+    @include respond-to(normal) {
+      transform: translateX($trigger-size);
+      cursor: auto;
+      .wrapper {
+        opacity: 1;
+        pointer-events: auto;
+        max-width: 800px;
+      }
+    }
+  }
+
+  .section.contacts {
+    @include respond-to(normal) {
+      transform: translateX($trigger-size);
+    }
   }
 }

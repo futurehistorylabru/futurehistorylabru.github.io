@@ -5,9 +5,24 @@
   img {
     border: 1px solid $color-white;
   }
+
+  @include respond-to(normal) {
+    margin-bottom: $grid*4; 
+  }
+}
+
+.multimedia-education {
+  @include respond-to(normal) {
+    max-width: 500px;
+    margin-bottom: $grid*2 + 3px;
+  }
 }
 
 .agency-services {
+  margin-bottom: $grid*2;
+  @include respond-to(normal) {
+    margin-bottom: $grid*4;
+  }
   ul {
     display: flex;
     justify-content: flex-start; 
@@ -20,30 +35,67 @@
     margin-left: -1px;
     white-space: nowrap;
     padding: 24px 12px 23px;
+    @include respond-to(normal) {
+      padding: 12px 20px 10px;
+    }
   }
-}
-
-.agency-services {
-  margin-bottom: $grid*2;
 }
 
 .anchors {
   margin-bottom: $grid*2 - 3px;
+  @include respond-to(normal) {
+    margin-bottom: $grid*3 - 10px;
+  }
 }
 
 .project-item {
   overflow: hidden;
   margin-bottom: $grid*2;
+  @include respond-to(normal) {
+    margin-bottom: $grid*4;
+    overflow: visible;
+  }
   .font-size-h1 span {
     background-image: linear-gradient(to right, #fff 100%, transparent 100%);
     background-position: 0 1.04em;
     background-repeat: repeat-x;
-    background-size: 8px 2px;
+    background-size: 8px 3px;
+  }
+}
+
+.project-info {
+  @include respond-to(normal) {
+    position: relative;
+    margin-bottom: $grid + 1px;
+  }
+  .project-img-wrapper {
+    display: none;
+    @include respond-to(normal) {
+      display: block;
+      img {
+        display: block;
+        width: 85%;
+        margin-left: auto;
+      }
+    }
+  }
+  .project-descr {
+    @include respond-to(normal) {
+      width: 88%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-32%);
+      margin-bottom: 0;
+    }
   }
 }
 
 .project-mobile-video {
   margin-bottom: $grid+1px;
+
+  @include respond-to(normal) {
+    display: none;
+  }
 
   img {
     display: block;
@@ -57,6 +109,9 @@
   margin-bottom: $grid+1px;
   .slick-list {
     overflow: visible;
+  }
+  @include respond-to(normal) {
+    display: none;
   }
 }
 
@@ -75,6 +130,14 @@
 .project-actions {
   a {
     margin-right: 10px;
+    @include respond-to(normal) {
+      margin-right: 20px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      line-height: 24px;
+      background-position: 0 1.14em;
+      background-size: 8px 2px;
+    }
   }
 }
 
@@ -153,6 +216,10 @@
   margin-bottom: $grid*2;
   overflow: hidden;
 
+  @include respond-to(normal) {
+    overflow: visible;
+  }
+
   .font-size-h1 {
     margin-bottom: $grid*2;
   }
@@ -166,6 +233,9 @@
 
   .events-slider {
     padding: 0 $grid - 2px;
+    @include respond-to(normal) {
+      display: none;
+    }
 
     .slick-list {
       overflow: visible;
@@ -205,5 +275,63 @@
   a {
     background-image: none;
     text-decoration: underline;
+  }
+}
+
+.section-header {
+  display: none;
+  @include respond-to(normal) {
+    display: block;
+    height: 190px;
+    position: relative;
+
+    .section-header-logo {
+      height: 98px;
+      display: inline-block;
+      background-image: none;
+      position: absolute;
+      top: 26px;
+      left: -37px;
+      img {
+        display: block;
+        height: 100%;
+      }
+    }
+
+    .section-header-name {
+      font-size: 18px;
+      line-height: 24px;
+      position: absolute;
+      right: 0;
+      top: 46px;
+      background-image: none;
+
+      &.section-header-name-flipped {
+        left: 0;
+        right: auto;
+
+        span {
+          transform: rotate(90deg);
+        }
+      }
+
+      img, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      span {
+        background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+        background-position: 0 1.14em;
+        background-repeat: repeat-x;
+        background-size: 8px 2px;
+      }
+
+      img {
+        height: 14.1px;
+        margin-top: 2px;
+        margin-right: 3px;
+      }
+    }
   }
 }

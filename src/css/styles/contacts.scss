@@ -8,6 +8,11 @@
   padding-top: $grid*1.5;
   margin-bottom: $grid*2;
 
+  @include respond-to(normal) {
+    border-top: none;
+    padding-top: $grid;
+  }
+
   .font-size-h1 {
     margin-bottom: 0;
   }
