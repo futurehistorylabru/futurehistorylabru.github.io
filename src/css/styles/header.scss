@@ -32,46 +32,95 @@
   cursor: pointer;
   width: 48px;
   height: 48px;
+  overflow: hidden;
+
+  .menu-trigger-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid $color-white;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+  }
 
   span {
+    display: block;
+    position: absolute;
     height: 2px;
     width: 100%;
     background: $color-white;
-    position: absolute;
+    opacity: 1;
     left: 0;
-    right: 0;
+    transform: rotate(0deg);
+    transition: all ease-in-out .3s;
 
-    &:first-child {
-      top: 0;
+    &:nth-child(1) {
+      top: 0px;
+      transform-origin: left center;
+    }
+
+    &:nth-child(2),&:nth-child(3) {
+      top: 23px;
+      transform-origin: left center;
+    }
+
+    &:nth-child(4) {
+      top: 46px;
+      transform-origin: left center;
+    }
+  }
+}
+
+.menu-opened {
+  .menu-trigger-border {
+    opacity: 1;
+  }
+
+  .menu-trigger span {
+    &:nth-child(1) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0px;
+      left: 1px;
+      width: 64px;
     }
 
     &:nth-child(2) {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      opacity: 0;
     }
 
-    &:last-child {
-      bottom: 0;
+    &:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 45px;
+      left: 2px;
+      width: 64px;
     }
   }
 }
 
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   top: $header-mobile-offset;
   right: 0;
   left: 0;
   bottom: 0;
   z-index: 99;
-  opacity: 0;
-  transition: opacity $base-transition-style .3s;
-  // @include respond-to(normal) {
-    display: none;
-  // }
+  transition: transform ease-in-out .3s;
+  transform: translateY(100%);
 
-  &.opened {
-    opacity: 1;
+  @include respond-to(normal) {
+    display: none;
+  }
+
+  nav {
+    height: 100%;
   }
 
   a {
@@ -79,7 +128,7 @@
     position: relative;
     color: $color-white;
     text-align: center;
-    height: calc((100vh - 48px)/3);
+    height: calc(100%/3);
     font-size: 30px;
 
     &.trigger-projects {
@@ -105,14 +154,7 @@
 
 .menu-opened {
   .mobile-menu {
-    display: block;
-  }
-
-  .container {
-    opacity: 0;
-    z-index: -1;
-    height: calc((100vh)/3);
-    overflow: hidden;
+    transform: translateY(0);
   }
 }
 
