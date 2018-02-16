@@ -97,7 +97,28 @@ function initAnchors() {
 
 function initSliders() {
   $('.project-slider-mobile').slick();
+  $('.events-slider').on('init', function(event, slick, currentSlide, nextSlide){
+    equalHeight($('.events-slider'));
+  });
+  $('.event-gallery').on('init', function(event, slick, currentSlide, nextSlide){
+    equalHeight($('.event-gallery'));
+  });
   $('.events-slider').slick();
+  $('.event-gallery').slick();
+}
+
+function equalHeight(el) {
+  console.log(el);
+  el.each(function(){  
+    var highestBox = 0;
+    $('.slider-item', this).each(function(){
+      if($(this).height() > highestBox) {
+        highestBox = $(this).height(); 
+      }
+    });
+    $('.slider-item').css('height', '');
+    $('.slider-item',this).height(highestBox);        
+  }); 
 }
 
 function initNav() {
@@ -196,20 +217,6 @@ function initVideos() {
   });
 }
 
-function equalHeight(el) {
-  var el = $('.events-slider');
-  el.each(function(){  
-    var highestBox = 0;
-    $('.events-slider-item', this).each(function(){
-      if($(this).height() > highestBox) {
-        highestBox = $(this).height(); 
-      }
-    });
-    $('.events-slider-item').css('height', '');
-    $('.events-slider-item',this).height(highestBox);        
-  }); 
-}
-
 function initDrag() {
   $('.project-img-item').each(function(){
     var myBlock = $(this);
@@ -291,12 +298,7 @@ $(document).ready(function(){
   initSliders();
   initNav();
   initVideos();
-  equalHeight('.events-slider');
   initDrag();
   initZoom();
-});
-
-$(window).bind("load",function(){
-  equalHeight('.events-slider');
 });
 

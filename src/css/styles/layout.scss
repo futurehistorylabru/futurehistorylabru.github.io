@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
 
   @include respond-to(normal) {
-    // overflow: hidden;
+    overflow: hidden;
     font-size: 34px;
     line-height: 48px;
   }
@@ -103,7 +103,7 @@ p {
   .scrollable {
     @include respond-to(normal) {
       padding: 0 $grid;
-      // height: 100vh;
+      height: 100vh;
       overflow: hidden;
       width: 100%;
     }
