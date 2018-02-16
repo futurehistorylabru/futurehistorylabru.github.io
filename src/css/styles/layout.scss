@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
 
   @include respond-to(normal) {
-    overflow: hidden;
+    // overflow: hidden;
     font-size: 34px;
     line-height: 48px;
   }
@@ -54,12 +54,7 @@ p {
 
 .main {
   position: relative;
-  min-height: 100vh;
   @include respond-to(normal) {
-    // max-width: $container-size;
-    // margin: 0 auto;
-    // padding: 0 $trigger-size*2 0 $grid;
-
     &.animated {
       .section {
         transition: transform $base-transition-style .3s;
@@ -96,15 +91,21 @@ p {
   @include respond-to(normal) {
     display: block;
     width: 100%;
-    padding: 0 $grid;
-    // transition: transform $base-transition-style .3s;
-    height: 100vh;
-    overflow: scroll;
     cursor: pointer;
+    padding-top: 0;
 
     .wrapper {
       transition: opacity ease-in-out .3s;
       pointer-events: none;
+    }
+  }
+
+  .scrollable {
+    @include respond-to(normal) {
+      padding: 0 $grid;
+      // height: 100vh;
+      overflow: hidden;
+      width: 100%;
     }
   }
 }
@@ -112,6 +113,11 @@ p {
 .section.startpage {
   @include respond-to(normal) {
     padding: 0;
+
+    .scrollable {
+      padding: 0;
+    }
+
     .wrapper {
       padding: 0 $trigger-size*2+24px 0 $grid;
       max-width: $container-size;
@@ -132,9 +138,20 @@ p {
 
     @include respond-to(normal) {
       cursor: auto;
+
+      &.project-about-show .scrollable {
+        overflow: hidden;
+      }
+
       .wrapper {
         pointer-events: auto;
       }
+    }
+  }
+
+  .scrollable {
+    @include respond-to(normal) {
+      overflow: scroll;
     }
   }
 }
@@ -145,10 +162,11 @@ p {
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 99;
     transform: translateX(100%);
     .wrapper {
       opacity: 0;
+      max-width: 800px;
     }
   }
 }
@@ -162,6 +180,11 @@ p {
       .wrapper {
         opacity: 1;
         pointer-events: auto;
+      }
+    }
+    .scrollable {
+      @include respond-to(normal) {
+        overflow: scroll;
       }
     }
   }
@@ -179,11 +202,20 @@ p {
         max-width: 800px;
       }
     }
+
+    .scrollable {
+      @include respond-to(normal) {
+        overflow: scroll;
+      }
+    }
   }
 
   .section.contacts {
     @include respond-to(normal) {
       transform: translateX($trigger-size);
+      .wrapper {
+        opacity: 1;
+      }
     }
   }
 }

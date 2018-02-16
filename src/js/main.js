@@ -1,6 +1,7 @@
 'use strict';
 
 require('jquery');
+require('hammerjs');
 require('slick-carousel/slick/slick');
 import 'normalize.css';
 import 'slick-carousel/slick/slick.css';
@@ -14,11 +15,18 @@ function showProjectAbout() {
     var el = $(this);
     var container = el.closest('.project-item');
     var about = container.find('.project-about');
+    var wrapper = about.find('.project-about-wrapper');
     var footer = $('.footer');
     about.removeClass('hidden');
-    container.css('margin-bottom', 0);
-    container.nextAll().addClass('hidden');
-    footer.addClass('hidden');
+    if ($(window).width()<500) {
+      container.css('margin-bottom', 0);
+      container.nextAll().addClass('hidden');
+      footer.addClass('hidden');
+    } else {
+      if (wrapper.height() + 48 > $(window).height()) {
+        wrapper.addClass('project-about-static');
+      }
+    }
     event.preventDefault();
   });
 
@@ -26,11 +34,18 @@ function showProjectAbout() {
     var el = $(this);
     var container = el.closest('.project-item');
     var about = container.find('.project-about');
+    var wrapper = about.find('.project-about-wrapper');
     var footer = $('.footer');
     about.addClass('hidden');
-    container.css('margin-bottom', '');
-    container.nextAll().removeClass('hidden');
-    footer.removeClass('hidden');
+    if ($(window).width()<500) {
+      container.css('margin-bottom', '');
+      container.nextAll().removeClass('hidden');
+      footer.removeClass('hidden');
+    } else {
+      if (wrapper.height() + 48 > $(window).height()) {
+        wrapper.removeClass('project-about-static');
+      }
+    }
     event.preventDefault();
   });
 }
@@ -43,11 +58,14 @@ function showTeamAbout() {
     var el = $(this);
     var container = el.closest('.team-item');
     var about = container.find('.team-about');
+    var wrapper = about.find('.team-about-wrapper');
     var footer = $('.footer');
     about.removeClass('hidden');
-    container.css('margin-bottom', 0);
-    container.nextAll().addClass('hidden');
-    footer.addClass('hidden');
+    if ($(window).width()<500) {
+      container.css('margin-bottom', 0);
+      container.nextAll().addClass('hidden');
+      footer.addClass('hidden');
+    }
     event.preventDefault();
   });
 
@@ -57,9 +75,11 @@ function showTeamAbout() {
     var about = container.find('.team-about');
     var footer = $('.footer');
     about.addClass('hidden');
-    container.css('margin-bottom', '');
-    container.nextAll().removeClass('hidden');
-    footer.removeClass('hidden');
+    if ($(window).width()<500) {
+      container.css('margin-bottom', '');
+      container.nextAll().removeClass('hidden');
+      footer.removeClass('hidden');
+    }
     event.preventDefault();
   });
 }
@@ -190,6 +210,80 @@ function equalHeight(el) {
   }); 
 }
 
+function initDrag() {
+  $('.project-img-item').each(function(){
+    var myBlock = $(this);
+    var mc = new Hammer(myBlock[0]);
+
+    mc.add( new Hammer.Pan({ 
+      threshold: 0,
+      recognizers: [
+        [Hammer.Pan, { direction: Hammer.DIRECTION_ALL }],
+        [Hammer.Tap]
+      ]
+    }));
+
+    mc.on('tap', function(ev) {
+      var elem = ev.target;
+      var wrapper = elem.closest('.project-img-item');
+      modifyDragIndex(wrapper);
+    });
+
+    mc.on("pan", handleDrag);
+
+    var lastPosX = 0;
+    var lastPosY = 0;
+    var isDragging = false;
+
+    function handleDrag(ev) {
+      var elem = ev.target;
+      var wrapper = elem.closest('.project-img-item');
+
+      if ( ! isDragging ) {
+        isDragging = true;
+        modifyDragIndex(wrapper);
+      }
+      
+      var posX = ev.deltaX + lastPosX;
+      var posY = ev.deltaY + lastPosY;
+      
+      wrapper.style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0)';
+      
+      if (ev.isFinal) {
+        isDragging = false;
+        lastPosX = posX;
+        lastPosY = posY;
+      }
+    }
+  });
+}
+
+function modifyDragIndex(elem) {
+  $('.project-img-item').each(function(){
+    if($(this).css('z-index') == 4) {
+      $(this).css('z-index', '');
+    }
+    elem.style.zIndex = 4;
+  });
+}
+
+function initZoom() {
+  $('.project-img-zoom').click(function() {
+    if($(this).closest('.project-img-item').css('width') == '800px') {
+      $(this).closest('.project-img-item').css('width', '');
+    } else {
+      $(this).closest('.project-img-item').css('width', '800px');
+    }
+  });
+  $('.project-img-collapse').click(function() {
+    if($(this).closest('.project-img-item').hasClass('collapsed')) {
+      $(this).closest('.project-img-item').removeClass('collapsed');
+    } else {
+      $(this).closest('.project-img-item').addClass('collapsed');
+    }
+  });
+}
+
 $(document).ready(function(){
   showProjectAbout();
   showTeamAbout();
@@ -198,6 +292,8 @@ $(document).ready(function(){
   initNav();
   initVideos();
   equalHeight('.events-slider');
+  initDrag();
+  initZoom();
 });
 
 $(window).bind("load",function(){

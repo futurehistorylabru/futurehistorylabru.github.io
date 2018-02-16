@@ -147,6 +147,7 @@
     padding-top: 0;
     padding-bottom: 0;
     background: none; 
+    z-index: 2;
   }
 
   span {
@@ -162,6 +163,51 @@
   color: $color-black;
   position: relative;
   z-index: 2;
+  @include respond-to(normal) {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    z-index: 99999;
+    background: transparent;
+    margin-top: 0;
+
+    .team-about-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.team-about-wrapper {
+  @include respond-to(normal) {
+    position: absolute;
+    top: $grid*2;
+    bottom: $grid*2;
+    right: 0;
+    left: 0;
+    max-width: 640px;
+    overflow: scroll;
+    margin: 0 auto;
+    background: $color-white;
+    border: 1px solid $color-black;
+
+    .padded {
+      padding-left: $grid;
+      padding-right: $grid;
+    }
+
+    &.team-about-static {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+  }
 }
 
 .team-about-close {
@@ -172,9 +218,35 @@
   top: -60px;
   cursor: pointer;
 
+  @include respond-to(normal) {
+    height: $grid;
+    cursor: auto;
+    padding: 5px 11px;
+    position: sticky;
+    top: 0;
+    background: $color-black;
+    width: 100%;
+    right: 0;
+  }
+
   img {
     width: 100%;
     display: block;
+    @include respond-to(normal) {
+      display: none;
+    }
+  }
+}
+
+.team-about-close-icon {
+  @include respond-to(normal) {
+    width: 14px;
+    height: 14px;
+    border: 1px solid $color-white;
+    cursor: pointer;
+    &:hover {
+      background: $color-orange;
+    }
   }
 }
 
@@ -199,6 +271,11 @@
   padding-top: $grid;
   p {
     margin-bottom: $grid;
+
+    @include respond-to(normal) {
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     &.blue {
       color: $color-blue;
