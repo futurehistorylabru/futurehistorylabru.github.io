@@ -184,7 +184,8 @@ function equalHeight(el) {
       if($(this).height() > highestBox) {
         highestBox = $(this).height(); 
       }
-    });  
+    });
+    $('.events-slider-item').css('height', '');
     $('.events-slider-item',this).height(highestBox);        
   }); 
 }
@@ -196,6 +197,10 @@ $(document).ready(function(){
   initSliders();
   initNav();
   initVideos();
+  equalHeight('.events-slider');
+});
+
+$(window).bind("load",function(){
   equalHeight('.events-slider');
 });
 

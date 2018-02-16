@@ -26,6 +26,8 @@
     background-size: 60px 60px;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity ease-in-out .1s;
   }
 
   .video-play {
@@ -46,7 +48,7 @@
     }
 
     .video-icon {
-      background-image: none;
+      opacity: 0;
     }
   }
 }
