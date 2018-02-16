@@ -2,12 +2,52 @@
   padding-top: 23px;
   margin-bottom: $grid*2 - 4px;
 
-  img {
-    border: 1px solid $color-white;
-  }
-
   @include respond-to(normal) {
     margin-bottom: $grid*4; 
+  }
+}
+
+.video-wrapper {
+  .video {
+    display: block;
+  }
+  .video-body {
+    position: relative;
+    border: 1px solid $color-white;
+  }
+  .video-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('/public/img/play-small.svg');
+    background-size: 60px 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .video-play {
+    display: none;
+  }
+
+  .pause {
+    display: none;
+  }
+
+  &.playing {
+    .play {
+      display: none;
+    }
+
+    .pause {
+      display: block;
+    }
+
+    .video-icon {
+      background-image: none;
+    }
   }
 }
 

@@ -158,11 +158,44 @@ function setActivePage(el, projects, contacts, team) {
   }
 }
 
+function initVideos() {
+  var videoWrapper = $('.video-wrapper');
+  videoWrapper.each(function(){
+    var el = $(this);
+    var video = $(this).find('.video').get(0);
+    var trigger = $(this).find('.video-trigger');
+    trigger.click(function() {
+      if (video.paused) {
+        video.play();
+        el.addClass('playing');
+      } else {
+        video.pause();
+        el.removeClass('playing');
+      }
+    });
+  });
+}
+
+function equalHeight(el) {
+  var el = $('.events-slider');
+  el.each(function(){  
+    var highestBox = 0;
+    $('.events-slider-item', this).each(function(){
+      if($(this).height() > highestBox) {
+        highestBox = $(this).height(); 
+      }
+    });  
+    $('.events-slider-item',this).height(highestBox);        
+  }); 
+}
+
 $(document).ready(function(){
   showProjectAbout();
   showTeamAbout();
   initAnchors();
   initSliders();
   initNav();
+  initVideos();
+  equalHeight('.events-slider');
 });
 
