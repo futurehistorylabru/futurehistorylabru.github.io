@@ -85,12 +85,23 @@ function showTeamAbout() {
 }
 
 function initAnchors() {
-  var body = $('html, body');
-
   $('.anchor-link[href*="#"]').click(function() {
     var target = $(this.hash);
+    var top = $(this).attr('data-top');
     if (target.length == 0){ return true; }
-    body.animate({scrollTop: target.offset().top - 20 }, 400);
+    if ($(window).width() > 500) {
+      var el = $(this).closest('.scrollable');
+      if ($(this).attr('href') == "#top") {
+        var distance = 0;
+      } else {
+        var distance = target.offset().top + el.scrollTop() - top;
+      }
+      el.animate({scrollTop: distance}, 400);
+    } else {
+      var el = $('html, body');
+      var distance = target.offset().top - top;
+      el.animate({scrollTop: distance}, 400);
+    }
     return false;
   });
 }
@@ -98,27 +109,42 @@ function initAnchors() {
 function initSliders() {
   $('.project-slider-mobile').slick();
   $('.events-slider').on('init', function(event, slick, currentSlide, nextSlide){
-    equalHeight($('.events-slider'));
-  });
-  $('.event-gallery').on('init', function(event, slick, currentSlide, nextSlide){
-    equalHeight($('.event-gallery'));
+    equalHeight($(this));
   });
   $('.events-slider').slick();
   $('.event-gallery').slick();
 }
 
 function equalHeight(el) {
-  console.log(el);
+  var highestBox = 0;
   el.each(function(){  
-    var highestBox = 0;
+    
     $('.slider-item', this).each(function(){
       if($(this).height() > highestBox) {
         highestBox = $(this).height(); 
       }
+      $(this).css('height', '');
     });
-    $('.slider-item').css('height', '');
+    
     $('.slider-item',this).height(highestBox);        
   }); 
+}
+
+function initGallery() {
+  var pos = 1;
+  var item = $('.event-item');
+  var totalSlides = $('.event-item').length;
+  var control = $('.next-event');
+
+  control.click(function() {
+    pos++;
+    if (pos == totalSlides+1) {
+      pos = 1;
+    }
+    item.removeClass('active');
+    $('.event-item[data-pos="' + pos + '"]').addClass('active');
+    $('.event-item[data-pos="' + pos + '"]').find('.event-gallery').slick('setPosition');
+  });
 }
 
 function initNav() {
@@ -153,10 +179,12 @@ function initNav() {
     el.removeClass('startpage-active contacts-active team-active');
     if (url=="projects") {
       url = "startpage";
-      el.addClass('' + url + '-active')
-      setTimeout( function() {
-        body.animate({scrollTop: $('#projects').offset().top - 42 }, 0);
-      }, 1);
+      el.addClass('' + url + '-active');
+      if ($(window).width() < 500) {
+        setTimeout( function() {
+          body.animate({scrollTop: $('#projects').offset().top - 42 }, 0);
+        }, 1);
+      }
     } else {
       el.addClass('' + url + '-active')
     }
@@ -167,10 +195,13 @@ function initNav() {
   });
 
   section.click(function(event) {
+    var target = $(this);
     url = $(this).attr('id');
     if (!el.hasClass('' + url + '-active')) {
       el.removeClass('startpage-active contacts-active team-active');
+      $('.section').removeClass('active');
       el.addClass('' + url + '-active');
+      target.addClass('active');
       setActivePage(el, projects, contacts, team);
     }
   });
@@ -179,6 +210,7 @@ function initNav() {
 function setActivePage(el, projects, contacts, team) {
   if ($(window).width()>500) {
     var info = $('#startpage .main-info');
+    var section = el.find('.section');
     if (el.hasClass('startpage-active')) {
       contacts.css('transform','translateX(' + (info.width() + info.offset().left + 24) + 'px)');
       team.css('transform','translateX(' + (info.width() + info.offset().left + 84) + 'px)');
@@ -249,6 +281,7 @@ function initDrag() {
       if ( ! isDragging ) {
         isDragging = true;
         modifyDragIndex(wrapper);
+        wrapper.classList.add("gragging");
       }
       
       var posX = ev.deltaX + lastPosX;
@@ -260,6 +293,7 @@ function initDrag() {
         isDragging = false;
         lastPosX = posX;
         lastPosY = posY;
+        wrapper.classList.remove("gragging");
       }
     }
   });
@@ -268,9 +302,10 @@ function initDrag() {
 function modifyDragIndex(elem) {
   $('.project-img-item').each(function(){
     if($(this).css('z-index') == 4) {
-      $(this).css('z-index', '');
+      $(this).css('z-index', '').removeClass('active');
     }
     elem.style.zIndex = 4;
+    elem.classList.add('active');
   });
 }
 
@@ -291,14 +326,37 @@ function initZoom() {
   });
 }
 
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height() - 250;
+
+  return elementTop < viewportBottom;
+};
+
+function checkVisible() {
+  $('.animated').each(function(){
+    if ($(this).isInViewport() && !$(this).hasClass('visible')) {
+      $(this).addClass('visible');
+    }
+  });
+}
+
 $(document).ready(function(){
   showProjectAbout();
   showTeamAbout();
   initAnchors();
-  initSliders();
   initNav();
   initVideos();
   initDrag();
   initZoom();
+  initGallery();
+  initSliders();
+  if ($(window).width() > 500) {
+    $('.section .scrollable').scroll(function(e){
+      checkVisible();
+    });
+  }
 });
 

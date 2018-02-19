@@ -34,6 +34,7 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-color: rgba(0,25,170,0.6);
     @include respond-to(normal) {
       background-image: url('/public/img/play-big.svg');
       background-size: 96px 96px;
@@ -49,6 +50,7 @@
       right: $grid*2-1px;
       top: $grid*2;
       cursor: pointer;
+      z-index: 1;
     }
   }
 
@@ -57,12 +59,8 @@
   }
 
   &.playing {
-    .play {
+    .video-play {
       display: none;
-    }
-
-    .pause {
-      display: block;
     }
 
     .video-icon {
@@ -78,7 +76,7 @@
   }
 }
 
-.agency-services {
+.agency-services, .partners-desktop {
   margin-bottom: $grid*2;
   @include respond-to(normal) {
     margin-bottom: $grid*4;
@@ -97,7 +95,35 @@
     padding: 24px 12px 23px;
     @include respond-to(normal) {
       padding: 12px 20px 10px;
+      box-shadow: inset 0px 0px 0px 35px rgba(255,255,255,1);
+      transition: box-shadow ease-in-out .3s;
     }
+  }
+  &.visible {
+    li {
+      @include respond-to(normal) {
+        box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
+      }
+    }
+  }
+}
+
+.partners-mobile {
+  @include respond-to(normal) {
+    display: none;
+  }
+}
+
+.partners-desktop {
+  display: none;
+  @include respond-to(normal) {
+    display: block;
+    margin-bottom: 0;
+    margin-top: $grid*2;
+  }
+  li {
+    font-size: 18px;
+    line-height: 34px;
   }
 }
 
@@ -160,7 +186,12 @@
       left: 0;
       z-index: 3;
       cursor: move;
+      cursor: grab;
       border: 1px solid $color-gray;
+
+      &:active { 
+        cursor: grabbing;
+      }
 
       &.project-img-item-2 {
         top: $grid;
@@ -179,6 +210,33 @@
       &.collapsed .project-img {
         display: none;
       }
+
+      &.gragging {
+        cursor: grabbing;
+      }
+
+      &.active {
+        .project-img-overlay {
+          opacity: 0;
+        }
+      }
+    }
+
+    .project-img {
+      padding-bottom: 52.2%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .project-img-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0,25,170,0.6);
     }
 
     .project-img-header {
@@ -199,19 +257,12 @@
       cursor: pointer;
 
       &.project-img-zoom:hover {
-        background: $color-pink;
+        background: $color-black;
       }
 
       &.project-img-collapse:hover {
-        background: $color-orange;
+        background: $color-black;
       }
-    }
-
-    .project-img {
-      padding-bottom: 52.2%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
   }
   .project-descr {
@@ -533,11 +584,23 @@
   display: none;
   @include respond-to(normal) {
     display: block;
+    &:hover {
+      background-image: none;
+      span {
+        background-image: linear-gradient(to right, #fff 50%, transparent 50%);
+      }
+    }
   }
 
   &.section-header-name-flipped {
     left: 0;
     right: auto;
+
+    &:hover {
+      span {
+        background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+      }
+    }
 
     span {
       transform: rotate(90deg);
@@ -553,7 +616,7 @@
     background-image: linear-gradient(to right, #fff 100%, transparent 100%);
     background-position: 0 1.14em;
     background-repeat: repeat-x;
-    background-size: 8px 2px;
+    background-size: 12px 2px;
   }
 
   img {
@@ -567,6 +630,20 @@
   display: none;
   @include respond-to(normal) {
     display: block;
+    position: relative;
+  }
+
+  .event-item {
+    padding-right: 190px;
+    display: none;
+
+    &.active {
+      display: block !important;
+    }
+
+    &.initialized {
+      display: none;
+    }
   }
 
   .event-item-title {
@@ -582,12 +659,38 @@
     position: relative;
     z-index: 9;
   }
+
+  .next-event {
+    position: absolute;
+    right: $grid*2;
+    top: 0;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .next-event-title {
+    background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+    background-position: 0 1.14em;
+    background-repeat: repeat-x;
+    background-size: 8px 2px;
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 .event-gallery {
 
   .slick-list {
     overflow: visible;
+  }
+
+  .slick-track {
+    cursor: move;
+    cursor: grab;
+
+    &:active { 
+      cursor: grabbing;
+    }
   }
 
   img {
@@ -604,9 +707,14 @@
     align-items: center;
     margin-right: $grid*2;
     outline: none;
+    height: 420px;
   }
 
   .slick-dots {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+
     li {
       display: inline-block;
       vertical-align: top;

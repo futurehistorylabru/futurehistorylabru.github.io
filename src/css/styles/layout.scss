@@ -34,6 +34,13 @@ a {
   background-position: 0 1.04em;
   background-repeat: repeat-x;
   background-size: 8px 3px;
+
+  &:hover {
+    @include respond-to(normal) {
+      background-image: linear-gradient(to right, #fff 50%, transparent 50%);
+      background-size: 15px 3px;
+    }   
+  }
 }
 
 p {
@@ -151,7 +158,7 @@ p {
 
   .scrollable {
     @include respond-to(normal) {
-      overflow: scroll;
+      overflow-y: scroll;
     }
   }
 }
@@ -184,7 +191,7 @@ p {
     }
     .scrollable {
       @include respond-to(normal) {
-        overflow: scroll;
+        overflow-y: scroll;
       }
     }
   }
@@ -205,7 +212,7 @@ p {
 
     .scrollable {
       @include respond-to(normal) {
-        overflow: scroll;
+        overflow-y: scroll;
       }
     }
   }
