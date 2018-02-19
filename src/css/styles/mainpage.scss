@@ -94,7 +94,7 @@
     white-space: nowrap;
     padding: 24px 12px 23px;
     @include respond-to(normal) {
-      padding: 12px 20px 10px;
+      padding: 11px 20px 11px;
       box-shadow: inset 0px 0px 0px 35px rgba(255,255,255,1);
       transition: box-shadow ease-in-out .3s;
     }
@@ -571,6 +571,23 @@
         height: 100%;
       }
     }
+  }
+}
+
+.redirect-link {
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  right: 120px;
+  top: 47px;
+  display: none;
+  @include respond-to(normal) {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    background-position: 0 1.14em;
+    background-size: 8px 2px;
   }
 }
 
