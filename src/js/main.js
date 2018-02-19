@@ -18,7 +18,7 @@ function showProjectAbout() {
     var wrapper = about.find('.project-about-wrapper');
     var footer = $('.footer');
     about.removeClass('hidden');
-    if ($(window).width()<500) {
+    if ($(window).width()<768) {
       container.css('margin-bottom', 0);
       container.nextAll().addClass('hidden');
       footer.addClass('hidden');
@@ -37,7 +37,7 @@ function showProjectAbout() {
     var wrapper = about.find('.project-about-wrapper');
     var footer = $('.footer');
     about.addClass('hidden');
-    if ($(window).width()<500) {
+    if ($(window).width()<768) {
       container.css('margin-bottom', '');
       container.nextAll().removeClass('hidden');
       footer.removeClass('hidden');
@@ -61,7 +61,7 @@ function showTeamAbout() {
     var wrapper = about.find('.team-about-wrapper');
     var footer = $('.footer');
     about.removeClass('hidden');
-    if ($(window).width()<500) {
+    if ($(window).width()<768) {
       container.css('margin-bottom', 0);
       container.nextAll().addClass('hidden');
       footer.addClass('hidden');
@@ -75,7 +75,7 @@ function showTeamAbout() {
     var about = container.find('.team-about');
     var footer = $('.footer');
     about.addClass('hidden');
-    if ($(window).width()<500) {
+    if ($(window).width()<768) {
       container.css('margin-bottom', '');
       container.nextAll().removeClass('hidden');
       footer.removeClass('hidden');
@@ -89,7 +89,7 @@ function initAnchors() {
     var target = $(this.hash);
     var top = $(this).attr('data-top');
     if (target.length == 0){ return true; }
-    if ($(window).width() > 500) {
+    if ($(window).width() > 768) {
       var el = $(this).closest('.scrollable');
       if ($(this).attr('href') == "#top") {
         var distance = 0;
@@ -180,7 +180,7 @@ function initNav() {
     if (url=="projects") {
       url = "startpage";
       el.addClass('' + url + '-active');
-      if ($(window).width() < 500) {
+      if ($(window).width() < 768) {
         setTimeout( function() {
           body.animate({scrollTop: $('#projects').offset().top - 42 }, 0);
         }, 1);
@@ -208,7 +208,7 @@ function initNav() {
 }
 
 function setActivePage(el, projects, contacts, team) {
-  if ($(window).width()>500) {
+  if ($(window).width()>768) {
     var info = $('#startpage .main-info');
     var section = el.find('.section');
     if (el.hasClass('startpage-active')) {
@@ -353,7 +353,7 @@ $(document).ready(function(){
   initZoom();
   initGallery();
   initSliders();
-  if ($(window).width() > 500) {
+  if ($(window).width() > 768) {
     $('.section .scrollable').scroll(function(e){
       checkVisible();
     });
