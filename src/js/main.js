@@ -250,6 +250,11 @@ function initVideos() {
 }
 
 function initDrag() {
+  $('.startpage').click(function(event) {
+    if (!$(event.target).parents(".project-img-item").length) {
+      $(".project-img-item").css('z-index', '').removeClass('active');
+    }
+  });
   $('.project-img-item').each(function(){
     var myBlock = $(this);
     var mc = new Hammer(myBlock[0]);
@@ -301,10 +306,10 @@ function initDrag() {
 
 function modifyDragIndex(elem) {
   $('.project-img-item').each(function(){
-    if($(this).css('z-index') == 4) {
+    if($(this).css('z-index') == 6) {
       $(this).css('z-index', '').removeClass('active');
     }
-    elem.style.zIndex = 4;
+    elem.style.zIndex = 6;
     elem.classList.add('active');
   });
 }
