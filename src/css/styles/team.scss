@@ -67,10 +67,10 @@
     width: 50%;
     top: 132px;
     right: -50px;
-    transform: rotate(360deg) scale(1.7);
-    opacity: 0;
-    transition: all ease-in-out .6s;
-    transition-delay: .6s;
+    // transform: rotate(360deg) scale(1.7);
+    // opacity: 0;
+    // transition: all ease-in-out .6s;
+    // transition-delay: .6s;
   }
 }
 
@@ -148,10 +148,10 @@
         transform: translate($grid*6,$grid*5) scale(1);
         opacity: 1;
       }
-      .team-info-wrapper {
-        transform: rotate(0) scale(1);
-        opacity: 1;
-      }
+      // .team-info-wrapper {
+      //   transform: rotate(0) scale(1);
+      //   opacity: 1;
+      // }
     }
     .team-item-right.visible {
       .team-img-2 {
