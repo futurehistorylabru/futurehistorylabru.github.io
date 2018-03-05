@@ -67,10 +67,23 @@
     width: 50%;
     top: 132px;
     right: -50px;
+    display: flex;
+    flex-wrap: wrap;
     // transform: rotate(360deg) scale(1.7);
     // opacity: 0;
     // transition: all ease-in-out .6s;
     // transition-delay: .6s;
+    .team-info {
+      width: 100%;
+    }
+  }
+}
+
+.team-info-descr {
+  @include respond-to(normal) {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 2px;
   }
 }
 
@@ -191,18 +204,21 @@
   @include respond-to(normal) {
     padding-top: 0;
     padding-bottom: 0;
+    margin-top: $grid/3 - 1px;
     background-color: transparent; 
     z-index: 2;
     display: inline;
     background-image: linear-gradient(to right, #fff 100%, transparent 100%);
     background-position: 0 1.04em;
     background-repeat: repeat-x;
-    background-size: 8px 3px;
+    background-size: 8px 2px;
+    font-size: 18px;
+    line-height: 24px;
 
     &:hover {
       @include respond-to(normal) {
         background-image: linear-gradient(to right, #fff 50%, transparent 50%);
-        background-size: 15px 3px;
+        background-size: 15px 2px;
       }   
     }
   }
