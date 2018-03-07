@@ -4,10 +4,10 @@
     <title>Arrow</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Main-Page---Eng-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-423.000000, -755.000000)">
-        <g id="About" transform="translate(180.000000, 189.000000)" stroke="#FFFFFF">
-            <g id="Player" transform="translate(0.000000, 411.000000)">
-                <polygon id="Arrow" points="340 204 244 252 244 156"></polygon>
+    <g id="Main-Page---Rus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-259.000000, -3543.000000)" fill-opacity="0.7">
+        <g id="Projects" transform="translate(-160.000000, 2008.000000)" fill="#FFFFFF" stroke="#FFFFFF">
+            <g id="Player" transform="translate(340.000000, 1488.000000)">
+                <polygon id="Arrow" points="176 96 80 144 80 48"></polygon>
             </g>
         </g>
     </g>

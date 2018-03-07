@@ -34,7 +34,7 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    background-color: rgba(0,25,170,0.6);
+    // background-color: rgba(0,25,170,0.6);
     @include respond-to(normal) {
       background-image: url('/public/img/play-big.svg');
       background-size: 96px 96px;
@@ -95,17 +95,17 @@
     padding: 24px 12px 23px;
     @include respond-to(normal) {
       padding: 11px 20px 11px;
-      box-shadow: inset 0px 0px 0px 35px rgba(255,255,255,1);
-      transition: box-shadow ease-in-out .3s;
+      // box-shadow: inset 0px 0px 0px 35px rgba(255,255,255,1);
+      // transition: box-shadow ease-in-out .3s;
     }
   }
-  &.visible {
-    li {
-      @include respond-to(normal) {
-        box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
-      }
-    }
-  }
+  // &.visible {
+  //   li {
+  //     @include respond-to(normal) {
+  //       box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
+  //     }
+  //   }
+  // }
 }
 
 .partners-mobile {
@@ -162,17 +162,32 @@
       background-size: 8px 3px;
     }
   }
+
+  .video-wrapper {
+    margin-bottom: $grid+1px;
+    @include respond-to(normal) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .project-info {
+  display: none;
   @include respond-to(normal) {
     position: relative;
-    margin-bottom: $grid + 1px;
+    margin-bottom: $grid*1.5 - 1px;
+    display: block;
+  }
+  &.project-info-mobile {
+    display: block;
+    @include respond-to(normal) {
+      display: none;
+    }
   }
   .project-img-wrapper {
     display: none;
     @include respond-to(normal) {
-      display: block;
+      // display: block;
       max-width: 688px;
       position: relative;
       padding-bottom: 50.3%;
@@ -268,10 +283,10 @@
   .project-descr {
     @include respond-to(normal) {
       width: 88%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-32%);
-      margin-bottom: 0;
+      // position: absolute;
+      // top: 50%;
+      // transform: translateY(-32%);
+      margin-bottom: $grid/3;
       z-index: 4;
     }
   }
@@ -310,13 +325,35 @@
     overflow: visible;
   }
   @include respond-to(normal) {
-    display: none;
+    // display: none;
+    padding: 0;
+    width: 88%;
+    position: relative;
+    z-index: 9;
+  }
+  .slick-prev {
+    display: none !important;
+  }
+  .project-slider-mobile-arrow {
+    position: absolute;
+    top: -106px;
+    right: -50px;
+    cursor: pointer;
+
+    &.slick-disabled {
+      cursor: auto;
+      opacity: .5;
+    }
   }
 }
 
 .project-slider-item {
   padding: 0 $grid/2;
   display: block !important;
+  @include respond-to(normal) {
+    padding: 0;
+    padding-right: $grid;
+  }
 }
 
 .project-slider-img {
