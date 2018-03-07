@@ -34,11 +34,13 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    display: none;
     // background-color: rgba(0,25,170,0.6);
     @include respond-to(normal) {
       background-image: url('/public/img/play-big.svg');
       background-size: 96px 96px;
       background-position: $grid*2 44px;
+      display: block;
     }
   }
 
@@ -344,6 +346,9 @@
       cursor: auto;
       opacity: .5;
     }
+  }
+  .video-wrapper {
+    margin-bottom: 0;
   }
 }
 
