@@ -594,6 +594,12 @@
   }
 }
 
+.footer-language {
+  @include respond-to(normal) {
+    display: none;
+  }
+}
+
 .section-header {
   display: none;
   @include respond-to(normal) {
