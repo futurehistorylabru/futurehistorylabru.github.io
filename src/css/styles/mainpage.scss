@@ -377,12 +377,15 @@
   background-repeat: no-repeat;
 }
 
+.scrollable-image-wrapper {
+  max-width: 640px;
+}
+
 .scrollable-image {
-  padding-bottom: 52%;
+  padding-bottom: 56.1%;
   overflow: hidden;
   position: relative;
   border: 1px solid $color-gray;
-  max-width: 640px;
 
   img {
     width: 100%;
