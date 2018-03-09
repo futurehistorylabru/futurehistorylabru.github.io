@@ -592,6 +592,50 @@
     background-image: none;
     text-decoration: underline;
   }
+
+  @include respond-to(normal) {
+    padding-bottom: $grid*2;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    max-width: 740px;
+  }
+
+  .copywrite, .social {
+    @include respond-to(normal) {
+      width: 50%;
+    }
+  }
+
+  .social {
+    @include respond-to(normal) {
+      text-align: right;
+    }
+  }
+
+  .back {
+    @include respond-to(normal) {
+      position: absolute;
+      bottom: 48px;
+      left: 0;
+      right: 0px;
+      text-align: center;
+      width: 65px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.footer-slogan {
+  display: none;
+  @include respond-to(normal) {
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: $grid*1.5;
+    width: 100%;
+  }
 }
 
 .footer-language {
