@@ -149,6 +149,7 @@ function initVideos() {
   videoWrapper.each(function(){
     var el = $(this);
     var video = $(this).find('.video').get(0);
+    var videoEl = $(this).find('.video');
     var trigger = $(this).find('.video-trigger');
     var slider = $(this).closest('.project-slider-mobile');
     var isSliding = false;
@@ -158,19 +159,41 @@ function initVideos() {
     slider.on('afterChange', function() {
       isSliding = false;
     });
+
     trigger.click(function() {
       if (isSliding) {
         return;
       } else {
-        if (video.paused) {
-          video.play();
-          el.addClass('playing');
-        } else {
-          video.pause();
-          el.removeClass('playing');
-        }
+        video.play();
+        el.addClass('playing');
       }  
     });
+
+    videoEl.click(function() {
+      video.pause();
+      el.removeClass('playing');
+    });
+
+    videoEl.hover(function toggleControls() {
+      if (this.hasAttribute("controls")) {
+        this.removeAttribute("controls")
+      } else {
+        this.setAttribute("controls", "controls")
+      }
+    })
+    // trigger.click(function() {
+    //   if (isSliding) {
+    //     return;
+    //   } else {
+    //     if (video.paused) {
+    //       video.play();
+    //       el.addClass('playing');
+    //     } else {
+    //       video.pause();
+    //       el.removeClass('playing');
+    //     }
+    //   }  
+    // });
   });
 }
 
