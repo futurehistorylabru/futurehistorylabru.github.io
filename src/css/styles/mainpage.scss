@@ -772,21 +772,34 @@
     z-index: 9;
   }
 
-  .next-event {
+  // .next-event {
+  //   position: absolute;
+  //   right: $grid*2;
+  //   top: 0;
+  //   text-align: right;
+  //   cursor: pointer;
+  // }
+
+  // .next-event-title {
+  //   background-image: linear-gradient(to right, #fff 100%, transparent 100%);
+  //   background-position: 0 1.14em;
+  //   background-repeat: repeat-x;
+  //   background-size: 8px 2px;
+  //   font-size: 18px;
+  //   line-height: 24px;
+  // }
+
+  .event-arrows {
     position: absolute;
-    right: $grid*2;
+    right: 38px;
     top: 0;
-    text-align: right;
-    cursor: pointer;
   }
 
-  .next-event-title {
-    background-image: linear-gradient(to right, #fff 100%, transparent 100%);
-    background-position: 0 1.14em;
-    background-repeat: repeat-x;
-    background-size: 8px 2px;
-    font-size: 18px;
-    line-height: 24px;
+  .event-arrow {
+    text-align: right;
+    cursor: pointer;
+    font-size: 44px;
+    display: inline-block;
   }
 }
 

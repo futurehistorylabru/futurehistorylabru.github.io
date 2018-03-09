@@ -178,9 +178,10 @@ function initGallery() {
   var pos = 1;
   var item = $('.event-item');
   var totalSlides = $('.event-item').length;
-  var control = $('.next-event');
+  var arrowNext = $('.event-arrow-next');
+  var arrowPrev = $('.event-arrow-prev');
 
-  control.click(function() {
+  arrowNext.click(function() {
     pos++;
     if (pos == totalSlides+1) {
       pos = 1;
@@ -189,6 +190,27 @@ function initGallery() {
     $('.event-item[data-pos="' + pos + '"]').addClass('active');
     $('.event-item[data-pos="' + pos + '"]').find('.event-gallery').slick('setPosition');
   });
+
+  arrowPrev.click(function() {
+    pos--;
+    if (pos == 0) {
+      pos = totalSlides;
+    }
+    item.removeClass('active');
+    $('.event-item[data-pos="' + pos + '"]').addClass('active');
+    $('.event-item[data-pos="' + pos + '"]').find('.event-gallery').slick('setPosition');
+  });
+  // var control = $('.next-event');
+
+  // control.click(function() {
+  //   pos++;
+  //   if (pos == totalSlides+1) {
+  //     pos = 1;
+  //   }
+  //   item.removeClass('active');
+  //   $('.event-item[data-pos="' + pos + '"]').addClass('active');
+  //   $('.event-item[data-pos="' + pos + '"]').find('.event-gallery').slick('setPosition');
+  // });
 }
 
 function initNav() {
