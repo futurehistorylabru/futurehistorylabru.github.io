@@ -333,19 +333,22 @@
     position: relative;
     z-index: 9;
   }
-  .slick-prev {
-    display: none !important;
-  }
   .project-slider-mobile-arrow {
     position: absolute;
-    top: -106px;
-    right: -50px;
+    top: -97px;
     cursor: pointer;
+    font-size: 44px;
 
     &.slick-disabled {
       cursor: auto;
-      opacity: .5;
+      opacity: .6;
     }
+  }
+  .project-slider-mobile-arrow-prev {
+    right: -60px;
+  }
+  .project-slider-mobile-arrow-next {
+    right: -24px;
   }
   .video-wrapper {
     margin-bottom: 0;

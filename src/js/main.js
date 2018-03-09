@@ -110,7 +110,8 @@ function initSliders() {
   $('.project-slider-mobile').slick({
     arrows: true,
     infinite: false,
-    nextArrow: '<div class="project-slider-mobile-arrow font-size-h1">></div>',
+    nextArrow: '<div class="project-slider-mobile-arrow project-slider-mobile-arrow-next font-size-h1">></div>',
+    prevArrow: '<div class="project-slider-mobile-arrow project-slider-mobile-arrow-prev font-size-h1"><</div>',
     responsive: [
       {
         breakpoint: 768,
