@@ -15,6 +15,22 @@
   .video {
     display: block;
   }
+
+  .video::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  .video::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  .video::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
   .video-body {
     position: relative;
     border: 1px solid $color-white;
@@ -34,13 +50,13 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    display: none;
+    // display: none;
     // background-color: rgba(0,25,170,0.6);
     @include respond-to(normal) {
       background-image: url('/public/img/play-big.svg');
       background-size: 96px 96px;
       background-position: $grid*2 44px;
-      display: block;
+      // display: block;
     }
   }
 

@@ -302,8 +302,8 @@ $(document).ready(function(){
   showTeamAbout();
   initAnchors();
   initNav();
-  initVideos();
   initGallery();
   initSliders();
+  initVideos();
 });
 
